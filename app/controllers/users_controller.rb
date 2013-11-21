@@ -8,14 +8,14 @@ class UsersController < ApplicationController
 	def create
 		
 		@user = User.new(user_parameters)
-		# @user.password_confirmation = params[:user][:password_confirmation]
+		@user.password_confirmation = params[:user][:password_confirmation]
 		if @user.save
 			flash[:notice] = "New User Created"
 			session[:user_id] = @user.id
 			redirect_to(user_path(@user))
 		else
 			flash[:notice] = "User not Created"
-			redirect_to('/')
+			redirect_to("/users/new")
 		end
 	end
 

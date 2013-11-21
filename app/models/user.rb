@@ -2,7 +2,7 @@
 
 class User < ActiveRecord::Base
 
-	has_secure_password validations: false
+	has_secure_password
 
   has_many :questions, foreign_key: :asker_id
   has_many :votes, foreign_key: :voter_id
