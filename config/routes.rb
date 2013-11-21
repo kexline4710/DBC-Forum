@@ -6,6 +6,8 @@ DBCForum::Application.routes.draw do
     resources :answers, only: [:create]
   end
 
+  root :to => 'sessions#index'
+
   get 'login' => 'sessions#new', :as => 'login'
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy', :as => 'logout'
