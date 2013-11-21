@@ -27,13 +27,14 @@ describe SessionsController do
     end
 
   context "#create" do
-    before do
-      post :create, :email => "tan@dbc.com", :password => "12234"
+    it "redirects to user profile page upon successful login" do
+      user = FactoryGirl.create(:user)
+      post :create, :email => user.email, :password => 'password'
+      response.should redirect_to user_path(user)
     end
-    
-    context "user login information is incorrect" do
-      it { should redirect_to('/login') }
+    it "redirects to login page upon failed login" do
+      post :create, :email => "fail@fail.com", :password => 'meh'
+      response.should redirect_to '/login'
     end
-
   end
 end
