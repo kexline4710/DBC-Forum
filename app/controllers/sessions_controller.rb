@@ -1,5 +1,3 @@
-
-
 class SessionsController < ApplicationController
 
   def new
@@ -11,7 +9,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_email(params[:email])
 
-    if true && user.authenticate(params[:password])
+    if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
     else
