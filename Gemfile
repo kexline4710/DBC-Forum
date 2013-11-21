@@ -27,7 +27,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-# Bcrypt
+
 gem 'bcrypt-ruby', '~> 3.0.0' 
 
 gem 'factory_girl_rails'
@@ -43,6 +43,8 @@ end
 
 group :development, :test do
   gem "rspec-rails", "~> 2.12"
+  gem 'capybara'
+  gem 'launchy'
 end
 
 # Use ActiveModel has_secure_password
