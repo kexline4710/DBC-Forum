@@ -10,3 +10,7 @@
 </table>
 
 <%= link_to "Create a Question", new_question_path %>
+
+<% if !!session[:user_id] %>
+  <%= link_to 'Your profile', login_path(@user) %>
+<% end %>
