@@ -9,3 +9,9 @@
 user = User.new(name: "Tanner", email: "tanner@dbc.com", password: "password", password_confirmation: "password")
 user.save
 
+question = user.questions.new(title: "Our first blog post", body: "Hi everyone! This is my first post and I'm so excited to tell you about my day.")
+question.save
+
+answer = user.answers.new(body: "I'm excited too!", question_id: question.id)
+answer2 = user.answers.new(body: "You suck!", question_id: question.id)
+
