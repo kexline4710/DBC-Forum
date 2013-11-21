@@ -1,0 +1,17 @@
+<h1>Create a new question!</h1>
+
+<%= form_for :question, url: questions_path do |form_builder| %>
+  <p>
+    <%= form_builder.label :title %><br>
+    <%= form_builder.text_field :title %>
+  </p>
+
+  <p>
+    <%= form_builder.label :body %><br>
+    <%= form_builder.text_area :body %>
+  </p>
+
+  <p>
+    <%= form_builder.submit %>
+  </p>
+  <% end %>

@@ -32,6 +32,9 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'factory_girl_rails'
 
+#Allows use of attr_accessible for mass assignment
+gem 'protected_attributes'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -39,6 +42,7 @@ end
 
 group :test do
   gem "shoulda-matchers"
+  gem 'capybara'
 end
 
 group :development, :test do
