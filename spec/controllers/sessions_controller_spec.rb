@@ -37,4 +37,16 @@ describe SessionsController do
       response.should redirect_to '/login'
     end
   end
+
+  context '#destroy' do
+    it "destroys the current stored session" do
+      session[:user_id] = 10
+      get 'destroy'
+      expect(session[:user_id]).to eq(nil)
+    end
+    it "redirects to the root (sessions#index)" do
+      get 'destroy'
+      response.should redirect_to root_path
+    end
+  end
 end
