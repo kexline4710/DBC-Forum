@@ -1,4 +1,20 @@
 DBCForum::Application.routes.draw do
+
+  resources :users, except: [:index, :destroy]
+
+  resources :questions, except: [:edit, :update, :destroy] do
+    resources :answers, only: [:create]
+  end
+
+  get 'login' => 'sessions#new', :as => 'login'
+  post 'login' => 'sessions#create'
+  get 'logout' => 'sessions#destroy', :as => 'logout'
+
+  post '/answers/:answer_id/votes/:vote', to: 'votes#create'
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,7 +55,7 @@ DBCForum::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
