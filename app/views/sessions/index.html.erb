@@ -1,11 +1,12 @@
-<h1>HOME PAGE!</h1>
+<h1>Welcome to DBC Forum</h1>
 
-<ul>List of Questions
-  <li>Q1) Err?</li>
-  <li>Q1) Err?</li>
-  <li>Q1) Err?</li>
-  <li>Q1) Err?</li>
-  <li>Q1) Err?</li>
-  <li>Q1) Err?</li>
-  <li>Q1) Err?</li>
-  <li>Q1) Err?</li></ul>
+<h3>Recent Questions</h3>
+
+<% @questions.each do |question| %>
+    <tr>
+      <td><%= link_to question.title, question_path(question) %></td><br>
+    </tr><br>
+  <% end %>
+</table>
+
+<%= link_to "Create a Question", new_question_path %>

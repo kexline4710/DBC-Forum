@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def index
+    @questions = Question.all
   end
 
   def create
