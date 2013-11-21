@@ -40,6 +40,7 @@ describe SessionsController do
 
   context '#destroy' do
     it "destroys the current stored session" do
+      session[:user_id] = 10
       get 'destroy'
       expect(session[:user_id]).to eq(nil)
     end
