@@ -7,6 +7,7 @@
 
 <ul>
   <% @question.answers.each do |answer| %>
-  <li><%= answer.body %><br><%= answer.responder.name %></li>
+  <li><%= answer.body %><br>
+    <a href="/users/<%= answer.responder.id %>"><%= answer.responder.name %></a></li><br>
   <% end %>
 </ul>
