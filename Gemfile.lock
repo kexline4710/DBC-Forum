@@ -150,8 +150,8 @@ DEPENDENCIES
   factory_girl_rails
   jbuilder (~> 1.2)
   jquery-rails
-  protected_attributes
   launchy
+  protected_attributes
   rails (= 4.0.0)
   rspec-rails (~> 2.12)
   sass-rails (~> 4.0.0)

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
 	def create
 		
-		@user = User.new(user_parameters)
+		@user = User.new(params[:user])
 		@user.password_confirmation = params[:user][:password_confirmation]
 		if @user.save
 			flash[:notice] = "New User Created"
@@ -19,9 +19,9 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def user_parameters
-		params.require(:user).permit(:name, :email, :password)
-	end
+	# def user_parameters
+	# 	params.require(:user).permit(:name, :email, :password, :password_confirmation)
+	# end
 
 	def show
 
