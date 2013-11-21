@@ -1,4 +1,7 @@
-== README
+==
+
+Sculpting tests is a good idea. However, we need a code review to take it to the next level..
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
