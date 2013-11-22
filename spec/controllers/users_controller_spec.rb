@@ -37,9 +37,38 @@ describe UsersController do
         @user = User.create(name: "Oliver", email: "a@a.com", password: "Password", password_confirmation: "Password")
         get :edit, :id => @user.id 
       end
-
       it { should respond_with(:success) }
       it { should render_template(:edit) }
+    end
+  end
+
+  context "#UPDATE" do
+    context "w/ correct info" do
+      before(:each) do
+        @user = User.create(name: "Oliver", email: "a@a.com", password: "Password", password_confirmation: "Password")
+        post :update, :id => @user.id, :user => {:name => "mike",password: "Password", password_confirmation: "Password"}
+        @user.reload
+      end
+      it "should be to update the users name, given they provide the password" do
+        expect(@user.name).to eq "mike"
+      end
+      
+      it { should redirect_to user_path(@user) }
+    end
+    context "w/o correct info" do
+      before(:each) do
+        @user = User.create(name: "Oliver", email: "a@a.com", password: "Password", password_confirmation: "Password")
+        post :update, :id => @user.id, :user => {:name => "mike"}
+        @user.reload
+      end
+      
+      it "should shoudl redirect back to edit user if the password is not provided" do
+        expect(subject).to redirect_to edit_user_path(@user)
+      end
+
+      it "should give you a flash message" do
+        flash[:notice].should eq "You must specify password and confirmation"
+      end
     end
   end
 end
