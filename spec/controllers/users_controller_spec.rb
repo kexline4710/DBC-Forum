@@ -2,6 +2,22 @@ require 'spec_helper'
 
 describe UsersController do 
 
+  context "#create" do
+    # before do
+    #   get :create, :user => {name: "Oliver", email: "a@a.com", password: "Password", password_confirmation: "Password"}
+    # end
+
+    # subject { assigns(:user) }
+
+    # its(:name) { should eq "Oliver" }
+
+    it "should create a user" do
+      get :create, :user => {name: "Oliver", email: "a@a.com", password: "Password", password_confirmation: "Password"}
+      user = assigns(:user)
+      user.name.should eq "Oliver"
+    end
+  end
+
   context "#show" do
     context "renders the users profile template" do
       before do

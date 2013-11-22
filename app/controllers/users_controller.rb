@@ -32,4 +32,13 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 	end
 
+	def update
+
+		@user = User.find(params[:id])
+		password_confirmation = params[:user][:password]
+		@user.update!(params[:user].merge(password_confirmation: password_confirmation))
+		# @user.save
+		redirect_to user_path(@user)
+	end
+
 end
