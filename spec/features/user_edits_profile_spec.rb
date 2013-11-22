@@ -14,8 +14,5 @@ feature "the user profile edit process" do
     visit user_path(user)
     expect(page).to have_text(new_name)
     expect(page).to have_text(new_email)
-    # user.reload
-    # expect(user.name).to eq new_name
-    # expect(user.email).to eq new_email
   end
 end
