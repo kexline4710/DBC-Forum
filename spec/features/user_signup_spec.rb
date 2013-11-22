@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe "the signup process", :type => :feature do
-	# before :each do
-	# 	@user = User.new(:name => "billy", :email => 'user@example.com', :password => 'password')
-	# end
+	before :each do
+		@user = FactoryGirl.create(:user)
+	end
 
 	it "successful signup" do
-		# @user = User.new(:name => "billy", :email => 'user@example.com', :password => 'password')
+		
 		visit '/users/new'
 		within(".new_user") do
 			fill_in 'user_name', with: "Joe"
@@ -14,15 +14,15 @@ describe "the signup process", :type => :feature do
 			fill_in 'user_password', with: "pas"
 			fill_in 'user_password_confirmation', with: "pas"
 		end
+
 		click_button("Create User")
-		current_path.should eq(user_path(User.first.id))
+
+		current_path.should eq user_path(User.last.id) 
+
 	end
 end
 
 describe "failed signup", :type => :feature do
-	# before :each do
-	# 	@user = User.new(:name => "", :email => 'user@example.com', :password => 'password')
-	# end
 
 	it "signs me up" do
 		visit '/users/new'
