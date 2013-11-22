@@ -1,9 +1,21 @@
 <h1><%= @user.name %>'s Profile Page</h1>
 <br><br>
 <div>
-<h3>Email: <%= @user.email %></h3>
+  <h3>Email: <%= @user.email %></h3>
 </div>
 <br>
+<% if @user.questions %>
+<h2>Questions:</h2>
+<div>
+  <ul>
+    <% @user.questions do |question| %>
+    <li>
+      <%= link_to question.title, get_url(question) %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %> 
 <div>
   <%= link_to "Edit", edit_user_path(@user) %>
 </div>
