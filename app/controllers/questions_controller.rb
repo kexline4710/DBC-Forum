@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def new
-    if !!session[:user_id]
+    if session[:user_id]
       render 'new'
     else
       flash[:notice] = "You must be logged in to create a question."
@@ -10,11 +10,9 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    # render text: params[:question].inspect
     @question = Question.new(params[:question].merge(asker_id: session[:user_id]) )
 
     if @question.save
-      p @question
       redirect_to question_path(@question)
     else
       redirect_to new_question_path
@@ -34,4 +32,3 @@ class QuestionsController < ApplicationController
   # end
 
 end
-
