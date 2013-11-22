@@ -29,7 +29,6 @@ describe "failed signup", :type => :feature do
 		within(".new_user") do
 			fill_in 'user_name', with: 'name'
 			fill_in 'user_email', with: 'email@email.com'
-			# fill_in 'user_password', with: ""
 		end
 		click_button("Create User")
 		current_path.should eq("/users/new")
