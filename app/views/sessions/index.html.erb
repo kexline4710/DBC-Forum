@@ -14,3 +14,7 @@
 <% if !!session[:user_id] %>
   <%= link_to 'Your profile', login_path(@user) %>
 <% end %>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice]  %></p>
+<% end %>
