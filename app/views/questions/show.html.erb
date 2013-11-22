@@ -11,3 +11,8 @@
     <a href="/users/<%= answer.responder.id %>"><%= answer.responder.name %></a></li><br>
   <% end %>
 </ul>
+
+<%= form_for :answer, url: question_answers_path(@question) do |f| %>
+  <%= f.text_area(:body, rows: 10, cols: 30) %>
+  <%= f.submit %>
+<% end %>
