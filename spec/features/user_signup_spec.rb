@@ -6,7 +6,7 @@ describe "the signup process", :type => :feature do
 	end
 
 	it "successful signup" do
-		# @user = User.new(:name => "billy", :email => 'user@example.com', :password => 'password')
+		
 		visit '/users/new'
 		within(".new_user") do
 			fill_in 'user_name', with: "Joe"
@@ -23,9 +23,6 @@ describe "the signup process", :type => :feature do
 end
 
 describe "failed signup", :type => :feature do
-	# before :each do
-	# 	@user = User.new(:name => "", :email => 'user@example.com', :password => 'password')
-	# end
 
 	it "signs me up" do
 		visit '/users/new'

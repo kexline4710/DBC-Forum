@@ -1,20 +1,24 @@
- require 'spec_helper'
+require 'spec_helper'
 
-#  describe "the user profile edit process", :type => :feature do
+describe "the user profile edit process", :type => :feature do
+  describe "edit" do
+    let(:user) { FactoryGirl.create(user) }
+    before do
+      sign_in user
+      visit edit user_path(user)
+    end
 
-
-#   context "#update" do
-#     it "updates the user attributes" do
-#         before do
-#         user = FactoryGirl.create(:user)
-#         get :edit, :id => user.id
-#     end
-#       put :update, :name => "new_name", :email => "new@email.com", :password => "new_password"
-#       response.should redirect_to user_path(user)
-#     end
-#     it "redirects to login page upon failed login" do
-#       post :create, :email => "fail@fail.com", :password => 'meh'
-#       response.should redirect_to '/login'
-#     end
-#   end
-# end
+    describe "change user information" do
+      let(:new_name)  { "new goo" }
+      let(:new_name)  { "new@goo.com" }
+      before do
+        fill_in "Name", with: new_name
+        fill_in "Email", with: new_email
+        fill_in "Password", with: "password"
+        click_button "Submit"
+        specify { expect(user.reload.name).to eq new_name }
+        specify { expect(user.reload.email).to eq new_email }
+      end
+    end
+  end
+end
