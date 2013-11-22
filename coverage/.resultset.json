@@ -1,14 +1,31 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/KatyX/Desktop/DBC-forum/app/helpers/application_helper.rb": [
+      "/Users/apprentice/Desktop/DBC-Answers-Tanner/app/helpers/application_helper.rb": [
         1,
+        null,
         1,
         1,
         null,
+        null,
         null
       ],
-      "/Users/KatyX/Desktop/DBC-forum/app/controllers/questions_controller.rb": [
+      "/Users/apprentice/Desktop/DBC-Answers-Tanner/app/controllers/answers_controller.rb": [
+        1,
+        1,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/DBC-Answers-Tanner/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/DBC-Answers-Tanner/app/controllers/questions_controller.rb": [
         1,
         null,
         1,
@@ -41,14 +58,7 @@
         null,
         null
       ],
-      "/Users/KatyX/Desktop/DBC-forum/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/KatyX/Desktop/DBC-forum/app/controllers/sessions_controller.rb": [
+      "/Users/apprentice/Desktop/DBC-Answers-Tanner/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -78,7 +88,7 @@
         null,
         null
       ],
-      "/Users/KatyX/Desktop/DBC-forum/app/controllers/users_controller.rb": [
+      "/Users/apprentice/Desktop/DBC-Answers-Tanner/app/controllers/users_controller.rb": [
         1,
         null,
         null,
@@ -124,13 +134,15 @@
         null,
         null
       ],
-      "/Users/KatyX/Desktop/DBC-forum/app/models/answer.rb": [
+      "/Users/apprentice/Desktop/DBC-Answers-Tanner/app/models/answer.rb": [
         1,
+        1,
+        null,
         1,
         1,
         null
       ],
-      "/Users/KatyX/Desktop/DBC-forum/app/models/question.rb": [
+      "/Users/apprentice/Desktop/DBC-Answers-Tanner/app/models/question.rb": [
         1,
         1,
         1,
@@ -143,7 +155,7 @@
         null,
         null
       ],
-      "/Users/KatyX/Desktop/DBC-forum/app/models/user.rb": [
+      "/Users/apprentice/Desktop/DBC-Answers-Tanner/app/models/user.rb": [
         null,
         null,
         1,
@@ -160,13 +172,13 @@
         null,
         null
       ],
-      "/Users/KatyX/Desktop/DBC-forum/app/models/vote.rb": [
+      "/Users/apprentice/Desktop/DBC-Answers-Tanner/app/models/vote.rb": [
         1,
         1,
         1,
         null
       ]
     },
-    "timestamp": 1385148934
+    "timestamp": 1385154683
   }
 }
