@@ -26,8 +26,5 @@ describe QuestionsController do
       post :create, :question => FactoryGirl.attributes_for(:question, :title => nil)
       response.should redirect_to new_question_path
     end
-
   end
-
-
 end
