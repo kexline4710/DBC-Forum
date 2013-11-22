@@ -7,7 +7,7 @@ describe "the user profile edit process", :type => :feature do
       sign_in user
       visit edit user_path(user)
     end
-
+# This test does not test anything - under construction
     describe "change user information" do
       let(:new_name)  { "new goo" }
       let(:new_name)  { "new@goo.com" }
