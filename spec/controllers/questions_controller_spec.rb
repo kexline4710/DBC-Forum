@@ -29,5 +29,6 @@ describe QuestionsController do
 
   end
 
+  #Questions controller needs more tests
 
 end
