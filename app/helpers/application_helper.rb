@@ -1,7 +1,11 @@
 module ApplicationHelper
 
 	def current_user
-		User.find(session[:user_id])
+    if User.exists?(session[:user_id])
+		  return User.find(session[:user_id])
+    end
+    
+    return false
 	end
 
 end
