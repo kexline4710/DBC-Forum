@@ -8,6 +8,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(params[:question].merge(asker_id: session[:user_id]) )
 
     if @question.save
+      p @question
       redirect_to question_path(@question)
     else
       redirect_to new_question_path

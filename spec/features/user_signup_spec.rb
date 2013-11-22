@@ -1,33 +1,34 @@
 require 'spec_helper'
 
 describe "the signup process", :type => :feature do
-	before :each do
-		@user = User.new(:name => "billy", :email => 'user@example.com', :password => 'password')
-	end
+	# before :each do
+	# 	@user = User.new(:name => "billy", :email => 'user@example.com', :password => 'password')
+	# end
 
 	it "successful signup" do
+		# @user = User.new(:name => "billy", :email => 'user@example.com', :password => 'password')
 		visit '/users/new'
 		within(".new_user") do
-			fill_in 'user_name', with: @user.name
-			fill_in 'user_email', with: @user.email
-			fill_in 'user_password', with: @user.password
-			fill_in 'user_password_confirmation', with: @user.password
+			fill_in 'user_name', with: "Joe"
+			fill_in 'user_email', with: "test@test.com"
+			fill_in 'user_password', with: "pas"
+			fill_in 'user_password_confirmation', with: "pas"
 		end
 		click_button("Create User")
-		current_path.should eq("/users/1")
+		current_path.should eq(user_path(User.first.id))
 	end
 end
 
 describe "failed signup", :type => :feature do
-	before :each do
-		@user = User.new(:name => "", :email => 'user@example.com', :password => 'password')
-	end
+	# before :each do
+	# 	@user = User.new(:name => "", :email => 'user@example.com', :password => 'password')
+	# end
 
 	it "signs me up" do
 		visit '/users/new'
 		within(".new_user") do
-			fill_in 'user_name', with: @user.name
-			fill_in 'user_email', with: @user.email
+			fill_in 'user_name', with: 'name'
+			fill_in 'user_email', with: 'email@email.com'
 			# fill_in 'user_password', with: ""
 		end
 		click_button("Create User")
