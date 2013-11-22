@@ -8,7 +8,7 @@ describe ApplicationHelper do
 			session[:user_id] = user.id
 			helper.current_user.should eql(User.find(user.id))
 		end
-		ß
+
 	end
 
 end
