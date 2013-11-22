@@ -12,3 +12,7 @@
 	<%= f.password_field :password_confirmation %>
 	<%= f.submit %>
 	<% end %>
+
+  <% if flash[:notice] %>
+  <p><%= flash[:notice]  %></p>
+<% end %>
