@@ -1,6 +1,12 @@
 class QuestionsController < ApplicationController
 
   def new
+    if !!session[:user_id]
+      render 'new'
+    else
+      flash[:notice] = "You must be logged in to create a question."
+      redirect_to root_path
+    end
   end
 
   def create
