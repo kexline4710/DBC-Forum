@@ -9,9 +9,8 @@ class Question < ActiveRecord::Base
   validates :asker_id, :presence => true
 
   def ordered_answers
-  	@answers = self.answers
-  	ordered_answers = []
-  	@answer.
+  	@answers = self.answers.sort_by! { |answer| answer.vote_score }
+  	p @answers
   end
 
 end

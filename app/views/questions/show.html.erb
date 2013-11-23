@@ -6,8 +6,8 @@
 <h2>Answers</h2>
 
 <ul>
-  <% @question.answers.each do |answer| %>
-  <li><%= answer.body %><br>
+  <% @answers.each do |answer| %>
+  <li>Votes: <%= answer.vote_score%><%= answer.body %><br>
     <a href="/users/<%= answer.responder.id %>"><%= answer.responder.name %></a></li><br>
   <% end %>
 </ul>

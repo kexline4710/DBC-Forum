@@ -24,6 +24,7 @@ class QuestionsController < ApplicationController
       redirect_to root_path
     else
       @question = Question.find(params[:id])
+      @answers = @question.ordered_answers
     end
   end
 

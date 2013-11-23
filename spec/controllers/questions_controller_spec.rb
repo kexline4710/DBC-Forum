@@ -37,3 +37,4 @@ describe QuestionsController do
   end
 end
 
+# need to restest the show action
