@@ -7,7 +7,7 @@
 
 <ul>
   <% @answers.each do |answer| %>
-  <li>Votes: <%= answer.vote_score%><%= answer.body %><br>
+  <li><%= answer.body %><br>
     <a href="/users/<%= answer.responder.id %>"><%= answer.responder.name %></a></li><br>
   <% end %>
 </ul>
