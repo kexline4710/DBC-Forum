@@ -15,6 +15,14 @@ FactoryGirl.define do
 
   factory :answer do
     body 'Go left'
+    question_id 1
+    responder_id 1
+  end
+
+  factory :vote do
+    answer_id 1
+    voter_id 1
+    state 1
   end
 
   factory :question_with_answer do
