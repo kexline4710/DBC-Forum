@@ -1,8 +1,3 @@
-<% if flash[:notice] %>
-<%= render 'users/signup_notification' %>
-<% end %>
-
-
 <%= form_tag( '/login', method: 'post' ) do  %>
   <%= label_tag(:email, "Email: ") %>
   <%= text_field_tag(:email) %>

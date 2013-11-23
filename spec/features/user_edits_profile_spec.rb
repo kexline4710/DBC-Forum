@@ -9,7 +9,7 @@ feature "the user profile edit process" do
     visit edit_user_path(user)
     fill_in "Name", with: new_name
     fill_in "Email", with: new_email
-    fill_in "Password", with: "password"
+    fill_in "About", with: "about"
     click_button "Update User"
     visit user_path(user)
     expect(page).to have_text(new_name)

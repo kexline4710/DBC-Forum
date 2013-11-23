@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 		if @user.save
 			flash[:notice] = "New User Created"
 			session[:user_id] = @user.id
-			redirect_to(user_path(@user))
+			redirect_to user_path(@user)
 		else
 			flash[:notice] = "User not Created"
 			redirect_to("/users/new")
@@ -33,12 +33,7 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		password_confirmation = params[:user][:password]
-		if @user.update(params[:user].merge(password_confirmation: password_confirmation))
-			redirect_to user_path(@user)
-		else
-			flash[:notice] = "You must specify password and confirmation"
-			redirect_to edit_user_path(@user)
-		end
+		@user.update_columns(params[:user])
+		redirect_to user_path(@user)
 	end
 end
