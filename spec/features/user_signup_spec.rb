@@ -18,7 +18,6 @@ describe "the signup process", :type => :feature do
 		click_button("Create User")
 
 		current_path.should eq user_path(User.last.id) 
-
 	end
 end
 
@@ -30,6 +29,7 @@ describe "failed signup", :type => :feature do
 			fill_in 'user_name', with: 'name'
 			fill_in 'user_email', with: 'email@email.com'
 		end
+		
 		click_button("Create User")
 		current_path.should eq("/users/new")
 	end
