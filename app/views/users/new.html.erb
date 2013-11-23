@@ -1,6 +1,7 @@
+<div class="content-div">
 <%= form_for(@user) do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
+	<%= f.label :name%>
+	<%= f.text_field :name, :autofocus => true %>
 
 	<%= f.label :email %>
 	<%= f.email_field :email %>
@@ -12,7 +13,4 @@
 	<%= f.password_field :password_confirmation %>
 	<%= f.submit %>
 	<% end %>
-
-  <% if flash[:notice] %>
-  <p><%= flash[:notice]  %></p>
-<% end %>
+</div>

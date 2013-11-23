@@ -67,7 +67,7 @@ describe UsersController do
       end
 
       it "should give you a flash message" do
-        flash[:notice].should eq "You must specify password and confirmation"
+        flash[:error].should eq "You must specify password and confirmation"
       end
     end
   end

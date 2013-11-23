@@ -10,11 +10,11 @@ class UsersController < ApplicationController
 		@user.password_confirmation = params[:user][:password_confirmation]
 
 		if @user.save
-			flash[:notice] = "New User Created"
+			flash[:success] = "New User Created"
 			session[:user_id] = @user.id
 			redirect_to(user_path(@user))
 		else
-			flash[:notice] = "User not Created"
+			flash[:error] = "User not Created"
 			redirect_to("/users/new")
 		end
 	end
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 		if @user.update(params[:user].merge(password_confirmation: password_confirmation))
 			redirect_to user_path(@user)
 		else
-			flash[:notice] = "You must specify password and confirmation"
+			flash[:error] = "You must specify password and confirmation"
 			redirect_to edit_user_path(@user)
 		end
 	end

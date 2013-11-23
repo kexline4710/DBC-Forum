@@ -19,8 +19,10 @@
 
 </nav>
 
-<% if flash[:notice] %>
-  <p><%= flash[:notice]  %></p>
+<% if flash[:success] %>
+  <p class="flash"><%= flash[:success]  %></p>
+<% elsif flash[:error] %>
+	<p class="bad-flash"><%= flash[:error] %></p>
 <% end %>
 
 <%= yield %>

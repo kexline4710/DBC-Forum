@@ -1,16 +1,17 @@
-<% if flash[:notice] %>
-<%= render 'users/signup_notification' %>
-<% end %>
+<div class="content-div">
 
+<%= form_for(@user, :url => login_path, :html => {:method => :post}) do |f| %>
 
-<%= form_tag( '/login', method: 'post' ) do  %>
-  <%= label_tag(:email, "Email: ") %>
-  <%= text_field_tag(:email) %>
-  <%= label_tag(:password, "Password: ") %>
-  <%= password_field_tag(:password) %>
-  <%= submit_tag("Submit") %>
-<% end %>
+	<%= f.label :email, 'Email'%>
+	<%= f.email_field :email, :autofocus => true  %>
 
-<% if flash[:notice] %>
+	<%= f.label :password, 'Password' %>
+	<%= f.password_field :password %>
+
+	<%= f.submit "Login"%>
+	<% end %>
+
+<% if flash[:error] %>
   <h4>Don't have an account? <%= link_to 'Sign up', new_user_path %></h4>
 <% end %>
+</div>

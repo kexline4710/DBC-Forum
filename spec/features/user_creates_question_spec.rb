@@ -4,11 +4,12 @@ feature 'User creates question' do
 
   context "user is logged in" do
     before(:each) do
-      @user = FactoryGirl.create(:user)
+      @user = User.create(name: "Oliver", email: "a@a.com", password: "Password", password_confirmation: "Password")
+      # @user = FactoryGirl.create(:user)
       visit login_path
-      fill_in :email, :with => @user.email
-      fill_in :password, :with => @user.password
-      click_button("Submit")
+      fill_in 'Email', :with => @user.email
+      fill_in 'Password', :with => @user.password
+      click_button("Login")
     end
 
     it 'should show the create question page if logged_in' do
