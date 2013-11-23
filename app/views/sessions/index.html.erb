@@ -11,11 +11,6 @@
 
 <%= link_to "Create a Question", new_question_path %>
 
-<% if current_user %>
-<% @user = current_user %>
-  <%= link_to 'Your profile', user_path(@user) %>
-<% end %>
-
 <% if flash[:notice] %>
   <p><%= flash[:notice]  %></p>
 <% end %>
