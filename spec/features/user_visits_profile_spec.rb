@@ -5,6 +5,7 @@ feature "the user profile page" do
   let(:question) { FactoryGirl.create(:question, :asker => user) }
    
   scenario "should display user's questions" do
+  
     question
 
     # visit new user page
@@ -12,7 +13,8 @@ feature "the user profile page" do
     # visit user's profile
     # click create question
     # create question
-    
+
+
     visit user_path(user)
 
     expect(page).to have_link(question.title)
