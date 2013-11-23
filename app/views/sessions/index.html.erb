@@ -11,7 +11,8 @@
 
 <%= link_to "Create a Question", new_question_path %>
 
-<% if !!session[:user_id] %>
+<% if current_user %>
+<% @user = current_user %>
   <%= link_to 'Your profile', user_path(@user) %>
 <% end %>
 
