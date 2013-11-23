@@ -10,8 +10,9 @@
 
 <nav>
 <%= link_to 'DBCForum', root_path %>
-<% if session[:user_id] %>
+<% if current_user %>
   <%= link_to 'Log out', logout_path %>
+  <%= link_to 'Your profile', user_path(current_user) %>
 <% else %>
   <%= link_to 'Log in', login_path %>
   <%= link_to 'Sign up', new_user_path %>
@@ -20,7 +21,7 @@
 </nav>
 
 <% if flash[:notice] %>
-  <p><%= flash[:notice]  %></p>
+  <h3> <%= flash[:notice] %></h3>
 <% end %>
 
 <%= yield %>
