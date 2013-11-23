@@ -8,4 +8,10 @@ class Question < ActiveRecord::Base
   validates :body, :presence => true
   validates :asker_id, :presence => true
 
+  def ordered_answers
+  	@answers = self.answers
+  	ordered_answers = []
+  	@answer.
+  end
+
 end
