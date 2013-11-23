@@ -1,5 +1,3 @@
-
-
 class User < ActiveRecord::Base
 
   attr_accessible :name, :email, :password, :password_confirmation
@@ -11,5 +9,4 @@ class User < ActiveRecord::Base
   has_many :answers, foreign_key: :responder_id
 
   validates :password, presence: true
-
 end

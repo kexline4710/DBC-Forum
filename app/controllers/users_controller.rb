@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(params[:user])
 		@user.password_confirmation = params[:user][:password_confirmation]
-		p @user
+
 		if @user.save
 			flash[:notice] = "New User Created"
 			session[:user_id] = @user.id
