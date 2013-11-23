@@ -12,7 +12,7 @@
 <%= link_to "Create a Question", new_question_path %>
 
 <% if !!session[:user_id] %>
-  <%= link_to 'Your profile', login_path(@user) %>
+  <%= link_to 'Your profile', user_path(@user) %>
 <% end %>
 
 <% if flash[:notice] %>
