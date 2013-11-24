@@ -3,6 +3,7 @@ require 'spec_helper'
 describe "the signup process", :type => :feature do
 	before :each do
 		@user = FactoryGirl.create(:user)
+		
 	end
 
 	it "successful signup" do
@@ -17,7 +18,7 @@ describe "the signup process", :type => :feature do
 
 		click_button("Create User")
 
-		current_path.should eq user_path(User.last.id) 
+		current_path.should eq("/users")
 	end
 end
 
