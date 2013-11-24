@@ -32,6 +32,7 @@ class UsersController < ApplicationController
 	end
 
 	def update
+
 		@user = User.find(params[:id])
 		@user.update_columns(params[:user])
 		redirect_to user_path(@user)
