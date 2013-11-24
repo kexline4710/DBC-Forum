@@ -8,7 +8,9 @@
 <ul>
   <% @question.answers.each do |answer| %>
   <li><%= answer.body %><br>
-    <a href="/users/<%= answer.responder.id %>"><%= answer.responder.name %></a></li><br>
+    <a href="/users/<%= answer.responder.id %>"><%= answer.responder.name %></a><br>
+    <%= button_to "Upvote", "/answers/#{answer.id}/votes/1", method: 'post' %>
+    <%= button_to "Downvote", "/answers/#{answer.id}/votes/0", method: 'post' %><br><br></li>
   <% end %>
 </ul>
 <% if current_user %>
