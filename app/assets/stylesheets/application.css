@@ -1,5 +1,6 @@
 body {
 	margin: 0 auto;
+	font-family: Helvetica;
 }
 
 nav {
@@ -10,7 +11,7 @@ nav {
 
 nav a {
 	text-decoration: none;
-	color: gray;
+	color: #D1D1D1;
 	padding: 15px;
 /*	margin: 15px;*/
 }
@@ -24,8 +25,6 @@ nav a:hover {
 	margin: 0 auto;
 	padding: 20px
 }
-
-
 
 .main h1 {
 	margin: 0 auto;
@@ -50,14 +49,28 @@ ul li{
 
 .flash {
 	margin: 0 auto;
-	background-color: green;
+	color: #33CC33;
 	padding: 15px;
 }
 
 .bad-flash {
-	background-color: red;
+	color: #CF0000;
 	margin: 0 auto;
 	padding: 15px;
 }
 
+.right-align {
+	float: right;
+}
 
+form input {
+	width: 250px;
+	display: block;
+	margin-bottom: 10px;
+}
+
+textarea {
+	width: 250px;
+	display: block;
+	margin-bottom: 10px;
+}
