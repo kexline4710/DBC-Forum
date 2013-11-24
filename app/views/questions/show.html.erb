@@ -1,23 +1,30 @@
 <div class="content-div">
-<h1><%= @question.title %></h1>
-<h4>Written by: <%= @question.asker.name %></h4>
+  <div class='question-page'>
 
-<p><%= @question.body %></p>
+  <h1><%= @question.title %></h1>
+  <h4>Written by: <%= @question.asker.name %></h4>
 
-<h2>Answers</h2>
+  <p><%= @question.body %></p>
 
-<ul>
-  <% @answers.each do |answer| %>
-  <li><%= answer.body %><br>
-    <a href="/users/<%= answer.responder.id %>"><%= answer.responder.name %></a><br>
-    <%= button_to "Upvote", "/answers/#{answer.id}/votes/1", method: 'post' %>
-    <p><%= answer.vote_score%></p><%= button_to "Downvote", "/answers/#{answer.id}/votes/0", method: 'post' %><br><br></li>
+  <h2>Answers</h2>
+
+  <ul>
+    <% @answers.each do |answer| %>
+    <li><%= answer.body %><br>
+      <a href="/users/<%= answer.responder.id %>"><%= answer.responder.name %></a></li>
+      <br>
+        <li><%= button_to "Upvote", "/answers/#{answer.id}/votes/1", method: 'post' %>
+        <p><%= answer.vote_score%></p>
+        <%= button_to "Downvote", "/answers/#{answer.id}/votes/0", method: 'post' %></li><br><br>
+    <% end %>
+  </ul>
+
+  <% if current_user %>
+    <%= form_for :answer, url: question_answers_path(@question) do |f| %>
+      <%= f.text_area(:body, rows: 10, cols: 30) %>
+      <%= f.submit %>
+    <% end %>
   <% end %>
-</ul>
-<% if current_user %>
-  <%= form_for :answer, url: question_answers_path(@question) do |f| %>
-    <%= f.text_area(:body, rows: 10, cols: 30) %>
-    <%= f.submit %>
-  <% end %>
-<% end %>
+
+  </div>
 </div>
