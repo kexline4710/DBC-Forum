@@ -1,16 +1,8 @@
 require 'spec_helper'
 
-describe UsersController do 
+describe UsersController do
 
   context "#create" do
-    # before do
-    #   get :create, :user => {name: "Oliver", email: "a@a.com", password: "Password", password_confirmation: "Password"}
-    # end
-
-    # subject { assigns(:user) }
-
-    # its(:name) { should eq "Oliver" }
-
     it "should create a user" do
       get :create, :user => {name: "Oliver", email: "a@a.com", password: "Password", password_confirmation: "Password"}
       user = assigns(:user)
@@ -35,28 +27,25 @@ describe UsersController do
     context "renders the users profile edit template" do
       before do
         @user = User.create(name: "Oliver", email: "a@a.com", password: "Password", password_confirmation: "Password")
-        get :edit, :id => @user.id 
+        get :edit, :id => @user.id
       end
+
       it { should respond_with(:success) }
       it { should render_template(:edit) }
     end
   end
 
-  # context "#UPDATE" do
-    # context "w/ correct info" do
-    #   before(:each) do
-    #     @user = User.create(name: "Oliver", email: "a@a.com")
-    #     puts "*************************************************"
-    #     puts @user.name
-    #     puts "*************************************************"
+  context "#UPDATE" do
+    context "w/ correct info" do
+      before(:each) do
+        @user = User.create(name: "Oliver", email: "a@a.com", password: "password", password_confirmation: "password")
+        post :update, :id => @user.id, :user => { :name => "mike" }
+      end
 
-    #     post :update, :id => @user.id, :name => "mike"
-        
-    #   end
-    #   it "should be able to update the users name" do
-    #     expect(@user.name).to eq "mike"
-    #   end
-      
+      it "should be able to update the users name" do
+        @user.reload
+        expect(@user.name).to eq "mike"
+      end
     #   it { should redirect_to user_path(@user) }
     # end
     # context "w/o correct info" do
@@ -72,6 +61,7 @@ describe UsersController do
     # it "should give you a flash message" do
     #   flash[:error].should eq "You must specify password and confirmation"
     # end
-  # end
+    end
+  end
 end
 
