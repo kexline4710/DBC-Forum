@@ -13,12 +13,20 @@ nav a {
 	text-decoration: none;
 	color: #D1D1D1;
 	padding: 15px;
-/*	margin: 15px;*/
 }
 
 nav a:hover {
 	color: white;
 
+}
+
+.content-div a {
+	text-decoration: none;
+	color: black;
+}
+
+.content-div a:hover {
+	font-weight: bold;
 }
 
 .main {
@@ -35,17 +43,10 @@ nav a:hover {
 }
 
 ul {
-/*	display: inline;*/
 	list-style: none;
 	padding: 0px;
 }
 
-ul li{
-/*	display: inline;*/
-	margin: 10px;
-/*	float: left;*/
-
-}
 
 .flash {
 	margin: 0 auto;
@@ -63,6 +64,21 @@ ul li{
 	float: right;
 }
 
+.two-column {
+	display: block;
+}
+
+.column-left {
+	float: left;
+	width: 400px;
+}
+
+.column-right {
+	float: left;
+	margin-left: 100px;
+	width: 400px;
+}
+
 form input {
 	width: 250px;
 	display: block;
@@ -73,4 +89,15 @@ textarea {
 	width: 250px;
 	display: block;
 	margin-bottom: 10px;
+}
+
+.question-page a {
+  color: gray;
+}
+
+.vote {
+}
+
+.button_to input {
+	width: 80px;
 }
