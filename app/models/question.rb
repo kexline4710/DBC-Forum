@@ -10,7 +10,7 @@ class Question < ActiveRecord::Base
 
   def ordered_answers
   	@answers = self.answers.sort_by! { |answer| answer.vote_score }
-  	p @answers
+  	@answers.reverse
   end
 
 end
