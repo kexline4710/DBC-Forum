@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe UsersController do
 
-  context "#create" do
+  context "#new" do
     it "should create a user" do
       get :create, :user => {name: "Oliver", email: "a@a.com", password: "Password", password_confirmation: "Password"}
       user = assigns(:user)

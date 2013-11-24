@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 		if @user.save
 			flash[:success] = "New User Created"
 			session[:user_id] = @user.id
-			redirect_to user_path(@user)
+			render :about
 		else
 			flash[:error] = "User not Created"
 			redirect_to("/users/new")
