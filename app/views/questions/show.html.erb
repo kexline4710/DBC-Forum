@@ -7,7 +7,7 @@
 <h2>Answers</h2>
 
 <ul>
-  <% @question.answers.each do |answer| %>
+  <% @answers.each do |answer| %>
   <li><%= answer.body %><br>
     <a href="/users/<%= answer.responder.id %>"><%= answer.responder.name %></a><br>
     <%= button_to "Upvote", "/answers/#{answer.id}/votes/1", method: 'post' %>
