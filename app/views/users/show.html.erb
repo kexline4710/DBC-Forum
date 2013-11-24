@@ -1,13 +1,17 @@
 <div class="content-div">
 <h1><%= @user.name %>'s Profile Page</h1>
-<br>
 <div>
   <h3>Email: <%= @user.email %></h3>
 </div>
+
+<div>
+  <%= link_to "Edit Your Profile", edit_user_path(@user) %>
+</div>
+
 <br>
 
-<% if @user.questions %>
-  <h2>Questions:</h2>
+<% if @user.questions[0] %>
+  <h2>Your Questions:</h2>
   <div>
     <ul>
       <% @user.questions.each do |question| %>
@@ -19,23 +23,21 @@
   </div>
 <% end %> 
 
-<% if @user.answers %>
-<h2>Answers:</h2>
-<div>
-  <ul>
-    <% @user.answers.each do |answer| %>
-    <li>
-      <%= answer.question.title %>
-    </li>
-    <li>
-      <%= link_to answer.body, question_path(answer.question) %>
-    </li>
-    <% end %>
-  </ul>
-</div>
+<% if @user.answers[0] %>
+  <h2>Your Answers:</h2>
+  <div>
+    <ul>
+      <% @user.answers.each do |answer| %>
+        <% author = answer.question.asker.name %>
+    
+        <h3><%= answer.question.title %></h3><h4>by <%= author %></h4>
+     
+      <li>
+        <%= link_to answer.body, question_path(answer.question) %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 <% end %> 
 
-<div>
-  <%= link_to "Edit", edit_user_path(@user) %>
-</div>
 </div>

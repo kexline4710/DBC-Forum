@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def new
-    if session[:user_id]
+    if session[:user_id]  # doesn't work with current_user method could be bug in controller_spec
       render 'new'
     else
       flash[:error] = "You must be logged in to create a question."
