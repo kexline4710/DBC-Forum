@@ -10,12 +10,4 @@ class Answer < ActiveRecord::Base
   	@downvotes = self.votes.where("state = ?", 0).count	# 1
   	vote_score = @upvotes - @downvotes
   end
-
-  def upvotes_count
-  	@upvotes = self.votes.where("state = ?", 1).count
-  end
-
-  def downvotes_count
-  	@downvotes = self.votes.where("state = ?", 0).count
-  end
 end
