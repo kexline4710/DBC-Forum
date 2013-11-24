@@ -11,23 +11,27 @@
 <nav>
 <%= link_to 'DBCForum', root_path %>
 <% if current_user %>
-  <%= link_to 'Log out', logout_path %>
+  <div class='right-align'>
   <%= link_to 'Your profile', user_path(current_user) %>
+  <%= link_to 'Log out', logout_path %>
+  </div>
 <% else %>
+  <div class='right-align'>
   <%= link_to 'Log in', login_path %>
   <%= link_to 'Sign up', new_user_path %>
+  </div>
 <% end %>
 
 </nav>
+
+<%= yield %>
 
 
 <% if flash[:success] %>
   <p class="flash"><%= flash[:success]  %></p>
 <% elsif flash[:error] %>
-	<p class="bad-flash"><%= flash[:error] %></p>
+  <p class="bad-flash"><%= flash[:error] %></p>
 <% end %>
-
-<%= yield %>
 
 </body>
 </html>
