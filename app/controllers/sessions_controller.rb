@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    @user = User.new
   end
 
   def index
@@ -9,13 +10,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_email(params[:email])
-
-    if user && user.authenticate(params[:password])
+    user = User.find_by_email(params[:user][:email])
+    if user && user.authenticate(params[:user][:password])
+      flash[:success] = "Successful signin"
       session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
     else
-      flash[:notice] = "Email or password incorrect."
+      flash[:error] = "Email or password incorrect."
       redirect_to '/login'
     end
   end
