@@ -26,7 +26,7 @@ nav a:hover {
 }
 
 .content-div a:hover {
-	font-weight: bold;
+	font-weight: bolder;
 }
 
 .main {
@@ -49,7 +49,15 @@ ul {
 	padding: 0px;
 }
 
+h1 {
+	font-weight: normal;
+	text-shadow:1px 1px 3px orange;
+}
 
+h2 {
+	font-weight: normal;
+	text-shadow:1px 1px 3px orange;
+}
 .flash {
 	margin: 0 auto;
 	color: #33CC33;
@@ -88,11 +96,17 @@ ul {
 	width: 400px;
 }
 
+.column-left li {
+	font-size: large;
+	margin-bottom: 10px;
+}
+
 .column-right {
 	float: left;
 	margin-left: 100px;
 	width: 400px;
 }
+
 
 form input {
 	width: 250px;

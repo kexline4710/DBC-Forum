@@ -30,7 +30,8 @@
       <% @user.answers.each do |answer| %>
         <% author = answer.question.asker.name %>
     
-        <h3><%= answer.question.title %></h3><h4>by <%= author %></h4>
+        <h3><%= answer.question.title %></h3>
+        <!-- <h4>by <%#= author %></h4> -->
      
       <li>
         <%= link_to answer.body, question_path(answer.question) %>
