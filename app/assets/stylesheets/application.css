@@ -12,7 +12,7 @@ nav {
 nav a {
 	text-decoration: none;
 	color: #D1D1D1;
-	padding: 15px;
+	padding: 15px 0px 15px 0px;
 }
 
 nav a:hover {
@@ -26,7 +26,7 @@ nav a:hover {
 }
 
 .content-div a:hover {
-	font-weight: bold;
+	font-weight: bolder;
 }
 
 .main {
@@ -40,6 +40,8 @@ nav a:hover {
 
 .content-div {
 	margin: 40px;
+	width: 700px;
+	margin: 20px auto 0px auto;
 }
 
 ul {
@@ -47,7 +49,15 @@ ul {
 	padding: 0px;
 }
 
+h1 {
+	font-weight: normal;
+	text-shadow:1px 1px 3px orange;
+}
 
+h2 {
+	font-weight: normal;
+	text-shadow:1px 1px 3px orange;
+}
 .flash {
 	margin: 0 auto;
 	color: #33CC33;
@@ -60,8 +70,21 @@ ul {
 	padding: 15px;
 }
 
+.nav_content {
+	width: 700px;
+	margin: 0px auto 0px auto;
+}
+
+.left-align {
+	float: left;
+}
+
 .right-align {
 	float: right;
+}
+
+.right-align a {
+	margin-left: 15px;
 }
 
 .two-column {
@@ -73,11 +96,17 @@ ul {
 	width: 400px;
 }
 
+.column-left li {
+	font-size: large;
+	margin-bottom: 10px;
+}
+
 .column-right {
 	float: left;
 	margin-left: 100px;
 	width: 400px;
 }
+
 
 form input {
 	width: 250px;

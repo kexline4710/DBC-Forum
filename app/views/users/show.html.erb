@@ -3,14 +3,16 @@
     <h1><%= @user.name %>'s Profile Page</h1>
     <h3>Email: <%= @user.email %></h3>
     <p> <%= @user.about %> </p>
-    <%= link_to "Edit Your Profile", edit_user_path(@user) %>
+    <% if @user == current_user %>
+      <%= link_to "Edit Your Profile", edit_user_path(@user) %>
+    <% end %>
   </div>
 
 <br>
 
 <% if @user.questions[0] %>
   <div class='column-left'>
-  <h2>Questions You've Asked:</h2>
+  <h2>Questions <%= @user.name %> Asked:</h2>
     <ul>
       <% @user.questions.each do |question| %>
       <li>
@@ -23,12 +25,13 @@
 
 <% if @user.answers[0] %>
   <div class='column-right'>
-  <h2>Questions You've Answered:</h2>
+  <h2>Questions <%= @user.name %> Answered:</h2>
     <ul>
       <% @user.answers.each do |answer| %>
         <% author = answer.question.asker.name %>
     
-        <h3><%= answer.question.title %></h3><h4>by <%= author %></h4>
+        <h3><%= answer.question.title %></h3>
+        <!-- <h4>by <%#= author %></h4> -->
      
       <li>
         <%= link_to answer.body, question_path(answer.question) %>
