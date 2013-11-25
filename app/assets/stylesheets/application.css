@@ -6,7 +6,7 @@ body {
 nav {
 	height: 20px;
 	padding: 10px;
-	background-color: black;	
+	background-color: black;
 }
 
 nav a {
@@ -17,7 +17,10 @@ nav a {
 
 nav a:hover {
 	color: white;
+}
 
+#nav li {
+	padding: 10px;
 }
 
 .content-div a {
@@ -79,15 +82,27 @@ h2 {
 	float: left;
 }
 
+.left-align a {
+	margin-right: 30px;
+}
+
 .right-align {
 	float: right;
 }
 
 .right-align a {
+	margin-left: 30px;
+}
+
+.two-column h3 {
+	margin-left: 15px
+}
+
+.two-column p {
 	margin-left: 15px;
 }
 
-.two-column {
+.two-column p{
 	display: block;
 }
 
@@ -98,13 +113,26 @@ h2 {
 
 .column-left li {
 	font-size: large;
+	margin-left: 15px;
 	margin-bottom: 10px;
+}
+
+.column-left h2 {
+	margin-bottom: 15px;
 }
 
 .column-right {
 	float: left;
 	margin-left: 100px;
 	width: 400px;
+}
+
+.column-right h3 {
+	margin-left: 15px;
+}
+
+.column-right a {
+	margin-left: 20px;
 }
 
 
@@ -129,4 +157,20 @@ textarea {
 
 .button_to input {
 	width: 80px;
+}
+
+.edit-profile {
+	margin-left: 0;
+	width: 400px;
+}
+
+.edit-profile a {
+	padding: 5px 5px 5px 5px;
+	border: 1px solid grey;
+}
+
+.create-question {
+	width: 140px;
+	padding: 5px 5px 5px ;
+	border: 1px solid grey;
 }
