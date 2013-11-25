@@ -82,12 +82,16 @@ h2 {
 	float: left;
 }
 
+.left-align a {
+	margin-right: 30px;
+}
+
 .right-align {
 	float: right;
 }
 
 .right-align a {
-	margin-left: 15px;
+	margin-left: 30px;
 }
 
 .two-column h3 {
@@ -113,6 +117,10 @@ h2 {
 	margin-bottom: 10px;
 }
 
+.column-left h2 {
+	margin-bottom: 15px;
+}
+
 .column-right {
 	float: left;
 	margin-left: 100px;
@@ -124,7 +132,7 @@ h2 {
 }
 
 .column-right a {
-	margin-left: 15px;
+	margin-left: 20px;
 }
 
 
@@ -152,16 +160,11 @@ textarea {
 }
 
 .edit-profile {
-
 	margin-left: 0;
-
 	width: 400px;
-
 }
 
 .edit-profile a {
-
-
 	padding: 5px 5px 5px 5px;
 	border: 1px solid grey;
 }

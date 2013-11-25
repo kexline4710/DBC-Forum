@@ -5,8 +5,6 @@
     <p> <%= @user.about %> </p>
   </div>
 
-  <br>
-
   <% if @user.questions[0] %>
     <div class='column-left'>
     <h2>Questions <%= @user.name %> Asked:</h2>
@@ -37,10 +35,4 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="edit-profile">
-    <% if @user == current_user %>
-        <%= link_to "Edit Your Profile", edit_user_path(@user) %>
-    <% end %>
-  </div>
 </div>
