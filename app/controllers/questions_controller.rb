@@ -10,12 +10,9 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    # @question = Question.new(params[:question].merge(asker_id: session[:user_id]) )
-    @question = Question.new(title: params[:title],
-                             body: params[:body],
-                             asker_id: session[:user_id])    
+    @question = current_user.questions.build(params[:question])
 
-    if @question.save
+    if @question.save!
       redirect_to question_path(@question)
     else
       redirect_to new_question_path

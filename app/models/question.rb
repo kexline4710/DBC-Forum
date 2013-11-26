@@ -4,6 +4,8 @@ class Question < ActiveRecord::Base
   has_many :taggings, :dependent => :destroy
   has_many :tags, :through => :taggings
 
+  attr_accessor :tag_names
+
   attr_accessible :title, :body, :asker_id, :tag_names
 
   validates :title, :presence => true
@@ -11,6 +13,11 @@ class Question < ActiveRecord::Base
   validates :asker_id, :presence => true
 
   after_save :assign_tags
+
+  def ordered_answers
+    @answers = self.answers.sort_by! { |answer| answer.vote_score }
+    @answers.reverse
+  end
 
   private
 
@@ -20,11 +27,6 @@ class Question < ActiveRecord::Base
         Tag.find_or_create_by_name(name)
       end
     end
-  end
-
-  def ordered_answers
-  	@answers = self.answers.sort_by! { |answer| answer.vote_score }
-  	@answers.reverse
   end
 
 end
