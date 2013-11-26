@@ -12,7 +12,7 @@ class QuestionsController < ApplicationController
   def create
     @question = current_user.questions.build(params[:question])
 
-    if @question.save!
+    if @question.save
       redirect_to question_path(@question)
     else
       redirect_to new_question_path
