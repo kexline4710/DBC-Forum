@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def index
-    @questions = Question.all
+    @questions = Question.store_question
     @user = User.find_by_id(params[:user_id])
   end
 

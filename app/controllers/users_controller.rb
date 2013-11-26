@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
 	def new
 		@user = User.new()
 	end
@@ -32,7 +31,7 @@ class UsersController < ApplicationController
 	end
 
 	def update
-
+		expire_fragment('user_bio')
 		@user = User.find(params[:id])
 		@user.update_columns(params[:user])
 		redirect_to user_path(@user)

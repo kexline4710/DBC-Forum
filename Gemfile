@@ -43,7 +43,8 @@ gem 'protected_attributes'
 gem 'heroku'
 
 #Adding memcache
-gem 'cached_model'
+gem 'memcache-client'
+gem 'dalli'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
