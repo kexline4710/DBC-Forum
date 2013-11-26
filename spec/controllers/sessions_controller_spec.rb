@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe SessionsController do 
+describe SessionsController do
 
   context "#index" do
 
     context "renders the index template" do
       before do
-        get :index  
+        get :index
       end
 
       it { should respond_with(:success) }
@@ -18,7 +18,7 @@ describe SessionsController do
   context "#new" do
     context "renders the new template" do
         before do
-          get :new  
+          get :new
         end
 
         it { should respond_with(:success) }
@@ -27,6 +27,7 @@ describe SessionsController do
     end
 
   context "#create" do
+
     it "redirects to user profile page upon successful login" do
       # p user = FactoryGirl.create(:user)
       @user = User.create(name: "Oliver", email: "a@a.com", password: "Password", password_confirmation: "Password")
