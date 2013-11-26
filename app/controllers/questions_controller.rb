@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
     if session[:user_id]  # doesn't work with current_user method could be bug in controller_spec
       render 'new'
     else
-      flash[:notice] = "You must be logged in to create a question."
+      flash[:error] = "You must be logged in to create a question."
       redirect_to root_path
     end
   end
@@ -27,6 +27,7 @@ class QuestionsController < ApplicationController
       redirect_to root_path
     else
       @question = Question.find(params[:id])
+      @answers = @question.ordered_answers
     end
   end
 

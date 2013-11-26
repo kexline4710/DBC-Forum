@@ -1,13 +1,176 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+body {
+	margin: 0 auto;
+	font-family: Helvetica;
+}
+
+nav {
+	height: 20px;
+	padding: 10px;
+	background-color: black;
+}
+
+nav a {
+	text-decoration: none;
+	color: #D1D1D1;
+	padding: 15px 0px 15px 0px;
+}
+
+nav a:hover {
+	color: white;
+}
+
+#nav li {
+	padding: 10px;
+}
+
+.content-div a {
+	text-decoration: none;
+	color: black;
+}
+
+.content-div a:hover {
+	font-weight: bolder;
+}
+
+.main {
+	margin: 0 auto;
+	padding: 20px
+}
+
+.main h1 {
+	margin: 0 auto;
+}
+
+.content-div {
+	margin: 40px;
+	width: 700px;
+	margin: 20px auto 0px auto;
+}
+
+ul {
+	list-style: none;
+	padding: 0px;
+}
+
+h1 {
+	font-weight: normal;
+	text-shadow:1px 1px 3px orange;
+}
+
+h2 {
+	font-weight: normal;
+	text-shadow:1px 1px 3px orange;
+}
+.flash {
+	margin: 0 auto;
+	color: #33CC33;
+	padding: 15px;
+}
+
+.bad-flash {
+	color: #CF0000;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+.nav_content {
+	width: 700px;
+	margin: 0px auto 0px auto;
+}
+
+.left-align {
+	float: left;
+}
+
+.left-align a {
+	margin-right: 30px;
+}
+
+.right-align {
+	float: right;
+}
+
+.right-align a {
+	margin-left: 30px;
+}
+
+.two-column h3 {
+	margin-left: 15px
+}
+
+.two-column p {
+	margin-left: 15px;
+}
+
+.two-column p{
+	display: block;
+}
+
+.column-left {
+	float: left;
+	width: 400px;
+}
+
+.column-left li {
+	font-size: large;
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+
+.column-left h2 {
+	margin-bottom: 15px;
+}
+
+.column-right {
+	float: left;
+	margin-left: 100px;
+	width: 400px;
+}
+
+.column-right h3 {
+	margin-left: 15px;
+}
+
+.column-right a {
+	margin-left: 20px;
+}
+
+
+form input {
+	width: 250px;
+	display: block;
+	margin-bottom: 10px;
+}
+
+textarea {
+	width: 250px;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.question-page a {
+  color: gray;
+}
+
+.vote {
+}
+
+.button_to input {
+	width: 80px;
+}
+
+.edit-profile {
+	margin-left: 0;
+	width: 400px;
+}
+
+.edit-profile a {
+	padding: 5px 5px 5px 5px;
+	border: 1px solid grey;
+}
+
+.create-question {
+	width: 140px;
+	padding: 5px 5px 5px ;
+	border: 1px solid grey;
+}

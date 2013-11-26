@@ -1,45 +1,38 @@
-<h1><%= @user.name %>'s Profile Page</h1>
-<div>
-  <h3>Email: <%= @user.email %></h3>
-</div>
-
-<div>
-  <p> <%= @user.about %> </p>
-</div>
-
-<div>
-  <%= link_to "Edit Your Profile", edit_user_path(@user) %>
-</div>
-
-<br>
-
-<% if @user.questions[0] %>
-  <h2>Your Questions:</h2>
-  <div>
-    <ul>
-      <% @user.questions.each do |question| %>
-      <li>
-        <%= link_to question.title, question_path(question) %>
-      </li>
-      <% end %>
-    </ul>
+<div class="content-div">
+  <div class='two-column'>
+    <h1><%= @user.name %>'s Profile Page</h1>
+    <h3>Email: <%= @user.email %></h3>
+    <p> <%= @user.about %> </p>
   </div>
-<% end %> 
 
-<% if @user.answers[0] %>
-<h2>Your Answers:</h2>
-<div>
-  <ul>
-    <% @user.answers.each do |answer| %>
-      <% author = answer.question.asker.name %>
-  
-      <h3><%= answer.question.title %></h3><h4>by <%= author %></h4>
-   
-    <li>
-      <%= link_to answer.body, question_path(answer.question) %>
-    </li>
-    <% end %>
-  </ul>
+  <% if @user.questions[0] %>
+    <div class='column-left'>
+    <h2>Questions <%= @user.name %> Asked:</h2>
+      <ul>
+        <% @user.questions.each do |question| %>
+        <li>
+          <%= link_to question.title, question_path(question) %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if @user.answers[0] %>
+    <div class='column-right'>
+    <h2>Questions <%= @user.name %> Answered:</h2>
+      <ul>
+        <% @user.answers.each do |answer| %>
+          <% author = answer.question.asker.name %>
+
+          <h3><%= answer.question.title %></h3>
+          <!-- <h4>by <%#= author %></h4> -->
+
+        <li>
+          <%= link_to answer.body, question_path(answer.question) %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 </div>
-<% end %> 
-

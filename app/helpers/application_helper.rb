@@ -8,4 +8,11 @@ module ApplicationHelper
     return false
 	end
 
+	def flash_class(level)
+		case level
+		when :success then "success"
+		when :error then "error"
+		end
+	end
+
 end

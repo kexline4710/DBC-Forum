@@ -1,0 +1,32 @@
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password, 'Password' %>
+  <%= f.password_field :password %>
+
+
+<% if !session[:user_id].nil? %>
+  <%= @user.name %> 
+  <% end %>
+  <%#= f.label :password_confirmation, 'Confirm Password' %>
+  <%#= f.password_field :password_confirmation %>
+  <%= f.submit %>
+  <% end %>
+
+
+    <% if flash[:notice] %>
+  <p><%= flash[:notice]  %></p>
+<% end %>
+
+<%= form_tag( '/login', method: 'post' ) do  %>
+  <%= label_tag(:email, "Email: ") %>
+  <%= text_field_tag(:email) %>
+  <%= label_tag(:password, "Password: ") %>
+  <%= password_field_tag(:password) %>
+  <%= submit_tag("Submit") %>
+<% end %>

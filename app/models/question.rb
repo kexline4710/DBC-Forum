@@ -22,5 +22,9 @@ class Question < ActiveRecord::Base
     end
   end
 
+  def ordered_answers
+  	@answers = self.answers.sort_by! { |answer| answer.vote_score }
+  	@answers.reverse
+  end
 
 end

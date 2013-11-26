@@ -1,19 +1,20 @@
-<%= form_for(@user) do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name, :required => true  %>
+<div class="content-div">
+  <%= form_for @user do |f| %>
 
-	<%= f.label :email %>
-	<%= f.email_field :email, :required => true %>
-  
-  <%= f.label :about %>
-  <%= f.text_area(:about,  rows: 10, cols: 30) %>
+  	<%= f.label :name%>
+  	<%= f.text_field :name, :autofocus => true %>
 
-	<%= f.label :password, 'Password' %>
-	<%= f.password_field :password, :required => true %>
+  	<%= f.label :email %>
+  	<%= f.email_field :email, :required => true %>
+    
+    <%#= f.label :about %>
+    <%#= f.text_area(:about,  rows: 10, cols: 30) %>
 
- 	<%= f.label :password_confirmation, 'Confirm Password' %>
-	<%= f.password_field :password_confirmation, :required => true %>
-	<%= f.submit %>
-<% end %>
+  	<%= f.label :password, 'Password' %>
+  	<%= f.password_field :password, :required => true %>
 
-
+   	<%= f.label :password_confirmation, 'Confirm Password' %>
+  	<%= f.password_field :password_confirmation, :required => true %>
+  	<%= f.submit %>
+  <% end %>
+</div>

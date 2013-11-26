@@ -8,4 +8,5 @@ describe Question do
   it { should allow_mass_assignment_of(:body) }
   it { should allow_mass_assignment_of(:asker_id) }
 
+  # need to test ordered_answers
 end

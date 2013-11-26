@@ -1,13 +1,17 @@
-<h1>Welcome to DBC Forum</h1>
+<div class="content-div">
 
-<h3>Recent Questions</h3>
+	<% if current_user %>
+		<% @user = current_user %>
+		<h1>Welcome, <%= @user.name %>!</h1>
+	<% else %>
+		<h1> Welcome to DBC Forum </h1>
+	<% end %>
 
-<% @questions.each do |question| %>
-    <tr>
-      <td><%= link_to question.title, question_path(question) %></td><br>
-    </tr><br>
-  <% end %>
-</table>
-
-<%= link_to "Create a Question", new_question_path %>
+	<h3 style="margin-left: 10px"> Recent Questions </h3>
+	<ul id="nav">
+	  <% @questions.each do |question| %>
+	    <li><%= link_to question.title, question_path(question) %></li>
+	  <% end %>
+	</ul>
+</div>
 

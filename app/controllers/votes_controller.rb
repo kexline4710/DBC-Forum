@@ -8,6 +8,7 @@ class VotesController < ApplicationController
       vote = Vote.find_by_answer_id_and_voter_id(params[:answer_id], session[:user_id])
       vote.update(state: params[:vote])
       redirect_to question_path(current_a.question_id)
+
     else
       Vote.create(answer_id: params[:answer_id], voter_id: session[:user_id], state: params[:vote])
       redirect_to question_path(current_a.question_id)
@@ -15,7 +16,7 @@ class VotesController < ApplicationController
 
   end
 
-  def vote_exist?(answer_id)
-    Vote.exists?(answer_id: answer_id, voter_id: session[:user_id])
+  def vote_exist?(a)
+    Vote.exists?(answer_id: a, voter_id: session[:user_id])
   end
 end
