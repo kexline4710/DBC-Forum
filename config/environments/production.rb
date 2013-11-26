@@ -4,11 +4,26 @@ DBCForum::Application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+  client = Dalli::Client.new(ENV["MEMCACHIER_SERVERS"],
+                             :value_max_bytes => 10485760)
+  config.action_dispatch.rack_cache = {
+    :metastore    => client,
+    :entitystore  => client
+  }
+  config.static_cache_control = "public, max-age=2592000"
+
+  config.serve_static_assets = true
+  config.static_cache_control = "public, max-age=2592000"
+  config.assets.digest = true
+  config.action_controller.perform_caching = true
+
+  config.cache_store = :dalli_store
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both thread web servers
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
+
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
