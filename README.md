@@ -10,7 +10,10 @@ rake db:create
 rake db:migrate
 rails server
 ```
-- rake spec (to run test suite)
+(to run test suite)
+```ruby
+rake spec 
+```
 
 Dependencies
 -----------------
