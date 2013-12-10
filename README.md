@@ -4,12 +4,12 @@ This was the first DBC group project where we used Rails and RSpec testing. We c
 
 To Run
 -----------------
-<code>
-- bundle install
-- rake db:create
-- rake db:migrate
-- rails server
-</code>
+```ruby
+bundle install
+rake db:create
+rake db:migrate
+rails server
+```
 - rake spec (to run test suite)
 
 Dependencies
