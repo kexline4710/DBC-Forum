@@ -2,6 +2,8 @@ DBC-Forum
 =================
 This was the first DBC group project where we used Rails and RSpec testing. We created a simple Q/A site with upvote/downvote and login capabilities.
 
+http://dbc-forum.herokuapp.com/
+
 To Run
 -----------------
 ```ruby
