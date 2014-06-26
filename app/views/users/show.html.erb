@@ -1,9 +1,11 @@
 <div class="content-div">
   <div class='two-column'>
-    <h1><%= @user.name %>'s Profile Page</h1>
-    <h3>Email: <%= @user.email %></h3>
-    <p> <%= @user.about %> </p>
-  </div>
+    <% cache('user_bio') do %>
+      <h1><%= @user.name %>'s Profile Page</h1>
+      <h3>Email: <%= @user.email %></h3>
+      <p> <%= @user.about %> </p>
+    </div>
+  <% end %>
 
   <% if @user.questions[0] %>
     <div class='column-left'>
