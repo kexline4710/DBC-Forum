@@ -11,10 +11,13 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+
+
 module DBCForum
   class Application < Rails::Application
     # config.assets.version = '1.0'
     config.assets.initialize_on_precompile = false
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

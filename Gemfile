@@ -58,6 +58,14 @@ group :development, :test do
   gem 'launchy'
 end
 
+# setting up for rackcache
+gem 'rack-cache'
+gem 'dalli'
+
+gem 'kgio'
+
+gem "memcachier"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
